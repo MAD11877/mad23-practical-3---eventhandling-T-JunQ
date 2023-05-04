@@ -5,11 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.Toast;
 
 
 public class MainActivity extends AppCompatActivity {
-
-
 
     @SuppressLint("SetTextI18n")
     @Override
@@ -30,10 +29,12 @@ public class MainActivity extends AppCompatActivity {
             {
                 follow.setText("Follow");
                 user.followed = false;
+                Toast.makeText(getApplicationContext(),"Unfollowed",Toast.LENGTH_SHORT).show();
             }
             else{
                 follow.setText("Unfollow");
                 user.followed = true;
+                Toast.makeText(getApplicationContext(),"Followed",Toast.LENGTH_SHORT).show();
             }
         });
     }
