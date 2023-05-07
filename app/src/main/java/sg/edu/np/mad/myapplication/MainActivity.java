@@ -3,8 +3,11 @@ package sg.edu.np.mad.myapplication;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
@@ -15,8 +18,13 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        TextView name = findViewById(R.id.username);
+        Intent listEnd = getIntent();
+        name.setText(listEnd.getStringExtra("name"));
+
         User user = new User();
-        Button follow = findViewById(R.id.button2);
+        Button follow = findViewById(R.id.follow);
         if (user.followed)
         {
             follow.setText("Unfollow");
@@ -37,6 +45,16 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(),"Followed",Toast.LENGTH_SHORT).show();
             }
         });
+
+        Button message = findViewById(R.id.message);
+        message.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent messageGroup = new Intent(MainActivity.this,MessageGroup.class);
+                startActivity(messageGroup);
+            }
+        });
+
     }
 }
 
