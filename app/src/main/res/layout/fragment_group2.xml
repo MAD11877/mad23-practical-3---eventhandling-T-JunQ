@@ -6,12 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".Group2Fragment">
 
-    <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/fragmentContainerView2"
-        android:name="sg.edu.np.mad.myapplication.Group2Fragment"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">

@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
         TextView name = findViewById(R.id.username);
         Intent listEnd = getIntent();
         name.setText(listEnd.getStringExtra("name"));
+        Intent messageGroup = new Intent(MainActivity.this,MessageGroup.class);
 
         User user = new User();
         Button follow = findViewById(R.id.follow);
@@ -50,7 +51,6 @@ public class MainActivity extends AppCompatActivity {
         message.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent messageGroup = new Intent(MainActivity.this,MessageGroup.class);
                 startActivity(messageGroup);
             }
         });
